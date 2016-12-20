@@ -1,4 +1,4 @@
-/**
+/** Returns the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
  * Created by Administrator on 2016/12/19 0019.
  */
 public class ImplementStr_28 {
