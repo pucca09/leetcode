@@ -63,18 +63,19 @@ public class Sort {
         int i = start;
         int j = end;
         int v = a[start];
-        while(i != j){
+        while(i < j){
             while( a[j] >= v && i<j){
                 j--;
             }
+            a[i] = a[j];
+
             while( a[i] <= v && i<j){
                 i++;
             }
-            if (i<j){
-                exch(a,i,j);
-            }
+            a[j] = a[i];
+
         }
-        exch(a,start,j);
+        a[i] = v;
         return j;
     }
     private static void merge(int[] a,int start,int mid,int end){
@@ -112,7 +113,8 @@ public class Sort {
         for(int i=0;i<n;i++){
             a[i] = in.nextInt();
         }
-        test.sheer(a);
+        test.quickSort(a,0,n-1);
+
         for(int i=0;i<n;i++){
             System.out.print(a[i]+",");
         }

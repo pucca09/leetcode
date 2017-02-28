@@ -1,6 +1,9 @@
 /** Returns the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
  * Created by Administrator on 2016/12/19 0019.
  */
+
+//
+// 瀛楃鍖归厤
 public class ImplementStr_28 {
     public int strStr(String haystack, String needle) {
         char[] a = haystack.toCharArray();
@@ -10,7 +13,7 @@ public class ImplementStr_28 {
         if((n > m) || (m == 0 && n != 0)){
             return -1;
         }
-        //needle为空，但haystack不为空时返回0
+        //
         if( (n == 0 && m == 0)|| (n == 0 && m != 0) ){
             return 0;
         }
