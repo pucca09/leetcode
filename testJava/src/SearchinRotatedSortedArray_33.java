@@ -17,7 +17,7 @@ public class SearchinRotatedSortedArray_33 {
                 return mid;
             }
 
-            if(nums[mid] >= nums[left])
+            if(nums[mid] >= nums[left])//在左边
             {
                 if(nums[mid] > target && nums[left] <= target)
                 {
@@ -28,7 +28,7 @@ public class SearchinRotatedSortedArray_33 {
                     left = mid + 1;
                 }
             }
-            else
+            else//在右边
             {
                 if(nums[mid] < target && nums[right] >= target)
                 {

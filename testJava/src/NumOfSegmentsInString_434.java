@@ -1,4 +1,4 @@
-/** ×Ö·û´®ÓÃ¿Õ¸ñ·Ö¸î£¬Êý³ö²»°üº¬¿Õ¸ñµÄ×Ó×Ö·û´®µÄ¸öÊý
+/** ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Ã¿Õ¸ï¿½Ö¸î£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¸ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½
  * Created by Administrator on 2016/12/19 0019.
  */
 public class NumOfSegmentsInString_434 {
@@ -7,12 +7,15 @@ public class NumOfSegmentsInString_434 {
         int count = 0;
         int flag = 0;
         for(int i=0;i<a.length;i++){
-            if(a[i] != ' ' && flag == 0){
-                count += 1;
+            if(a[i] != ' '){
                 flag = 1;
             }else if(a[i] == ' ' && flag == 1){
                 flag = 0;
+                count ++;
             }
+        }
+        if(flag == 1){
+            count++;
         }
         return count;
     }

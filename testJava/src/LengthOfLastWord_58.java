@@ -3,18 +3,23 @@
  */
 public class LengthOfLastWord_58 {
     public int lengthOfLastWord(String s) {
-        char[] a = s.toCharArray();
-        int count = 0;
+        //bianjie
+        if(s.length() == 0){
+            return 0;
+        }
         int flag = 0;
-        for(int i = a.length-1;i>=0;i--){
-            if(a[i] != ' '){
-                count += 1;
+        char[] ch = s.toCharArray();
+        int count = 0;
+        for(int i = 0;i<ch.length;i++){
+            if(flag == 0 && ch[i] != ' '){
                 flag = 1;
-            }else if(a[i] == ' ' && flag == 1){
-                return count;
+                count = 0;
             }
+            if(flag == 1 && ch[i] != ' '){
+                count++;
+            }
+            if(ch[i] == ' ') flag = 0;
         }
         return count;
-
     }
 }

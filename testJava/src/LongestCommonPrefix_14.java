@@ -5,32 +5,37 @@ import java.util.Scanner;
  */
 public class LongestCommonPrefix_14 {
     public String longestCommonPrefix(String[] strs) {
-        //数组为空，则最长前缀为空
+        if(strs == null || strs.length == 0)    return "";
+        String pre = strs[0];
+        int i = 1;
+        while(i < strs.length){
+            while(strs[i].indexOf(pre) != 0)
+                pre = pre.substring(0,pre.length()-1);
+            i++;
+        }
+        return pre;
+    }
+    public String longestCommonPrefix2(String[] strs) {
         if(strs.length == 0){
             return "";
         }
-        //任意一个字符串为空，则最长前缀为空
-        for(String s:strs){
-            if (s.equals("")){
-                return "";
-            }
-        }
-        if(strs.length == 1){
-            return strs[0];
-        }
-        String s = strs[0];
         String res = "";
-        for(int i = 0;i < s.length();i++){
-            String prefix = s.substring(0,i+1);
-            for(int j = 1;j<strs.length;j++){
-                if(strs[j].indexOf(prefix) != 0){
-                    return res;
+        String v = strs[0];
+        for(int i = 0;i<v.length();i++){
+            char ch = v.charAt(i);
+            int j = 1;
+            for(; j<strs.length;j++){
+                if(i >= strs[j].length() || strs[j].charAt(i) != ch){
+                    break;
                 }
             }
-            res += s.charAt(i);
+            if(j  == strs.length){
+                res += ch;
+            }else{
+                break;
+            }
         }
-        return s;
-
+        return res;
 
     }
     public static void main(String[] args){
