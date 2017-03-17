@@ -1,6 +1,7 @@
 /**
  * Created by chenqingqing on 2017/3/2.
  */
+//有重复
 public class SearchinRotatedSortedArray_81 {
     public int search(int[] nums, int target) {
         if(nums.length == 0){

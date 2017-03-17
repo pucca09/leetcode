@@ -1,3 +1,5 @@
+package ksum;
+
 import java.util.HashMap;
 
 /**
