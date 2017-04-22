@@ -1,11 +1,5 @@
 import java.util.*;
 
-/**
- * Created by Administrator on 2016/11/23 0023.
- * 将字符串中的所有元音位置颠倒
- * 1)识别元音：List 2)颠倒 首尾遍历
- * Diffculty:Easy
- */
 public class ReverseVowelsOfAString_345 {
     public static String reverseVowelsOfAString(String s){
         char[] seq = s.toCharArray(); //String to CharArray
@@ -13,7 +7,7 @@ public class ReverseVowelsOfAString_345 {
         int start = 0;
         int end = len - 1;
         List<Character> charac = new ArrayList<>(Arrays.asList('a', 'e', 'i','o','u',
-                'A','E','I','O','U'));//ArrayList 静态初始化
+                'A','E','I','O','U'));//ArrayList 锟斤拷态锟斤拷始锟斤拷
         while (len != 0 && len != 1 && start < end){
             if (charac.contains(seq[start]) == false){
                 start += 1;

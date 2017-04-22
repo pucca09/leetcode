@@ -18,6 +18,7 @@ public class RotateList_61 {
         if(k%len == 0){
             return head;
         }else{
+            //找到新链表的尾节点
             int k_ = len-k%len;
             while(k_>1){
                 p = p.next;
